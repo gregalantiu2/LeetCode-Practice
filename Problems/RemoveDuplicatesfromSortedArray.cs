@@ -22,13 +22,13 @@ namespace LeetCode_Practice
         public void RemoveDuplicatesfromSortedArray_Case1()
         {
             Solution solution = new Solution();
-            //Assert.Equal(2, nums: [1,2,_], solution.RemoveDuplicates(nums: [1,1,2]));
+            Assert.Equal(2, solution.RemoveDuplicates(nums: [1,1,2]));
         }
         [Fact]
         public void RemoveDuplicatesfromSortedArray_Case2()
         {
             Solution solution = new Solution();
-            //Assert.Equal(5, nums: [0,1,2,3,4,_,_,_,_,_], solution.RemoveDuplicates(nums: [0,0,1,1,1,2,2,3,3,4]));
+            Assert.Equal(5, solution.RemoveDuplicates(nums: [0,0,1,1,1,2,2,3,3,4]));
         }
     }
 }
