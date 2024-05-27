@@ -10,6 +10,7 @@ namespace LeetCode_Practice
      }
 
     public partial class Solution {
+
         public ListNode ReverseList(ListNode head) {
             ListNode previousNode = null;
             ListNode nextNode = null;
@@ -28,6 +29,26 @@ namespace LeetCode_Practice
             }
     
             return previousNode;
+        }
+        public ListNode previousNode2 { get; set; } = null;
+
+        public ListNode ReverseList_Recursive(ListNode head)
+        {
+            if (head is null )
+            {
+                return head;
+            }
+
+            ListNode previousNode = null;
+            ListNode saveNext = head.next;
+
+            head.next = previousNode2;
+
+            previousNode2 = head;
+
+            ReverseList_Recursive(saveNext);
+
+            return previousNode2;
         }
     }
     public class ReverseLinkedList
