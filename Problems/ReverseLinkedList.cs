@@ -7,7 +7,7 @@ namespace LeetCode_Practice
               this.val = val;
               this.next = next;
           }
-     }
+      }
 
     public partial class Solution {
 
@@ -30,7 +30,7 @@ namespace LeetCode_Practice
     
             return previousNode;
         }
-        public ListNode previousNode2 { get; set; } = null;
+        private ListNode previousNode2 { get; set; } = null;
 
         public ListNode ReverseList_Recursive(ListNode head)
         {
