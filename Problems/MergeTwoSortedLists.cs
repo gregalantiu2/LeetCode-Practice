@@ -11,71 +11,64 @@ namespace LeetCode_Practice
      *     }
      * }
      */
-    public partial class Solution {
-        ListNode modifiedList;
-    
+    public partial class Solution {    
         public ListNode MergeTwoLists(ListNode list1, ListNode list2) {
-            // Modify one sorted list - modify the one with the lowest val
-            //Compare list val
-            //  If val is lower or equal, make it next
-            // Take the next correct value and make it next to the current node
-            //return head
-    
-            // base case: 
-            if (list1 == null && list2 == null)
+            ListNode dummyHead = new ListNode();
+            ListNode dummyTail = dummyHead;
+
+
+            while(list1 != null && list2 != null)
             {
-                return null;
-            }
-            else
-            {
-                if (list1 != null && list2 == null)
+                if (list1.val <= list2.val)
                 {
-                    if (modifiedList == null)
-                    {
-                        modifiedList = list1;
-                    }
-                    else {
-                        modifiedList.next = list1;
-                    }
-                }   
-    
-                else if (list2 != null && list1 == null)
-                {
-                    if (modifiedList == null)
-                    {
-                        modifiedList = list2;
-                    }
-                    else {
-                        modifiedList.next = list2;
-                    }
+                    dummyTail.next = list1;
+                    list1 = list1.next;
                 }
                 else
                 {
-                    if (modifiedList == null)
-                    {
-                        modifiedList = list1.val <= list2.val ? list1 : list2;
-                    }
-                    else
-                    {
-                        modifiedList.next = list1.val <= list2.val ? list1 : list2;
-                    }
+                    dummyTail.next = list2;
+                    list2 = list2.next;
                 }
-                
+                dummyTail = dummyTail.next;
             }
-    
-            MergeTwoLists(list1?.next, list2?.next);
-    
-            return modifiedList;
+
+            if (list1 != null){
+                dummyTail.next = list1;
+            }
+            else if (list2 != null){
+                dummyTail.next = list2;
+            }
+
+            return dummyHead.next;
         }
     }
     public class MergeTwoSortedLists
     {
         [Fact]
-        public void MergeTwoSortedLists_Case1()
+        public void Test1()
         {
+            // Arrange
+            ListNode list1 = new ListNode(1);
+            list1.next = new ListNode(3);
+            list1.next.next = new ListNode(5);
+
+            ListNode list2 = new ListNode(2);
+            list2.next = new ListNode(4);
+            list2.next.next = new ListNode(6);
+
             Solution solution = new Solution();
-            solution.MergeTwoLists(null, new ListNode() { val = 2, next = null });
-            Assert.Equal(1,1);
+
+            // Act
+            ListNode mergedList = solution.MergeTwoLists(list1, list2);
+
+            // Assert
+            Assert.Equal(1, mergedList.val);
+            Assert.Equal(2, mergedList.next.val);
+            Assert.Equal(3, mergedList.next.next.val);
+            Assert.Equal(4, mergedList.next.next.next.val);
+            Assert.Equal(5, mergedList.next.next.next.next.val);
+            Assert.Equal(6, mergedList.next.next.next.next.next.val);
+            Assert.Null(mergedList.next.next.next.next.next.next);
         }
     }
 }
