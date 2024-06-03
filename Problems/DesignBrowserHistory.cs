@@ -4,17 +4,17 @@ namespace LeetCode_Practice
     // Array or Double Linked List
     // Double Linked List, clearing the history would be O(1)
     
-    public class ListNode{
-        public ListNode prev {get; set;}
-        public ListNode next {get; set;}
-        public string val {get; set;}
+    // public class ListNode{
+    //     public ListNode prev {get; set;}
+    //     public ListNode next {get; set;}
+    //     public string val {get; set;}
     
-        public ListNode(ListNode prev, ListNode next, string val){
-            this.prev = prev;
-            this.next = next;
-            this.val = val;
-        }
-    }
+    //     public ListNode(ListNode prev, ListNode next, string val){
+    //         this.prev = prev;
+    //         this.next = next;
+    //         this.val = val;
+    //     }
+    // }
     
     public class BrowserHistory {
     
