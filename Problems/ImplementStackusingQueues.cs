@@ -3,7 +3,7 @@ namespace LeetCode_Practice
     public class ImplementStackusingQueues {
         Queue<int> queue;
     
-        public MyStack() {
+        public ImplementStackusingQueues() {
             queue = new Queue<int>();
         }
         
