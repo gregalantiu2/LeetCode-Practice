@@ -1,9 +1,9 @@
 namespace LeetCode_Practice
 {
-    public class ImplementStackusingQueues {
+    public class ImplementStackusingQueuesSolution {
         Queue<int> queue;
     
-        public ImplementStackusingQueues() {
+        public ImplementStackusingQueuesSolution() {
             queue = new Queue<int>();
         }
         

@@ -1,20 +1,8 @@
 namespace LeetCode_Practice
 {
-    public class DoubleListNode{
-        public DoubleListNode prev;
-        public DoubleListNode next;
-        public int val;
-    
-        public DoubleListNode(DoubleListNode prev, DoubleListNode next, int val)
-        {
-            this.prev = prev;
-            this.next = next;
-            this.val = val;
-        }
-    }
     public class MyLinkedList {
-        DoubleListNode dummyHead = new DoubleListNode(null, null, 0);
-        DoubleListNode dummyTail = new DoubleListNode(null,null,0);
+        DoubleListNode<int> dummyHead = new DoubleListNode<int>(null, null, 0);
+        DoubleListNode<int> dummyTail = new DoubleListNode<int>(null,null,0);
 
         
         public MyLinkedList() {
@@ -38,13 +26,13 @@ namespace LeetCode_Practice
         }
         
         public void AddAtHead(int val) {
-            var newNode = new DoubleListNode(this.dummyHead,this.dummyHead.next,val);
+            var newNode = new DoubleListNode<int>(this.dummyHead,this.dummyHead.next,val);
             this.dummyHead.next.prev = newNode;
             this.dummyHead.next = newNode;
         }
         
         public void AddAtTail(int val) {
-            var newNode = new DoubleListNode(this.dummyTail.prev, this.dummyTail, val);
+            var newNode = new DoubleListNode<int>(this.dummyTail.prev, this.dummyTail, val);
             this.dummyTail.prev.next = newNode;
             this.dummyTail.prev = newNode;
         }
@@ -60,7 +48,7 @@ namespace LeetCode_Practice
 
             if (current != null && index == 0)
             {
-                var newNode = new DoubleListNode(current.prev, current, val);
+                var newNode = new DoubleListNode<int>(current.prev, current, val);
                 current.prev.next = newNode;
                 current.prev = newNode;
             }
@@ -98,7 +86,7 @@ namespace LeetCode_Practice
         public void DesignLinkedList_Case1()
         {
             Solution solution = new Solution();
-            Assert.Equal(X,solution.Test(x));
+            //Assert.Equal(X,solution.Test(x));
         }
     }
 }

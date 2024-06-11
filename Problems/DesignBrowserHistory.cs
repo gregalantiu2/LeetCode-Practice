@@ -1,39 +1,23 @@
 namespace LeetCode_Practice
 {
-    // What data structure?
-    // Array or Double Linked List
-    // Double Linked List, clearing the history would be O(1)
-    
-    // public class ListNode{
-    //     public ListNode prev {get; set;}
-    //     public ListNode next {get; set;}
-    //     public string val {get; set;}
-    
-    //     public ListNode(ListNode prev, ListNode next, string val){
-    //         this.prev = prev;
-    //         this.next = next;
-    //         this.val = val;
-    //     }
-    // }
-    
     public class BrowserHistory {
     
-        ListNode dummyHead;
-        ListNode dummyTail;
-        ListNode current;
+        DoubleListNode<string> dummyHead;
+        DoubleListNode<string> dummyTail;
+        DoubleListNode<string> current;
     
         public BrowserHistory(string homepage) {
-            dummyHead = new ListNode(null,null,"");
-            dummyTail = new ListNode(null,null,"");
+            dummyHead = new DoubleListNode<string>(null,null,"");
+            dummyTail = new DoubleListNode<string>(null,null,"");
     
-            ListNode homePageNode = new ListNode(dummyHead, dummyTail, homepage);
+            DoubleListNode<string> homePageNode = new DoubleListNode<string>(dummyHead, dummyTail, homepage);
             dummyHead.next = homePageNode;
             dummyTail.prev = homePageNode;
             current = homePageNode;
         }
         
         public void Visit(string url) {
-            ListNode visitNode = new ListNode(current, dummyTail, url);
+            DoubleListNode<string> visitNode = new DoubleListNode<string>(current, dummyTail, url);
             dummyTail.prev = visitNode;
             current.next = visitNode;
             current = visitNode;
@@ -81,7 +65,7 @@ namespace LeetCode_Practice
         public void DesignBrowserHistory_Case1()
         {
             Solution solution = new Solution();
-            Assert.Equal(X,solution.Test(x));
+            //Assert.Equal(X,solution.Test(x));
         }
     }
 }
