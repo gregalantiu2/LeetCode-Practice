@@ -28,5 +28,11 @@ namespace LeetCode_Practice
             Solution solution = new Solution();
             Assert.Equal(3, solution.ClimbStairs(n: 3));
         }
+        [Fact]
+        public void ClimbingStairs_Case3()
+        {
+            Solution solution = new Solution();
+            Assert.Equal(8, solution.ClimbStairs(n: 5));
+        }
     }
 }
