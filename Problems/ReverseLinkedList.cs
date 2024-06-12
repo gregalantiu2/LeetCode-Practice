@@ -2,9 +2,9 @@ namespace LeetCode_Practice
 {   
     public partial class Solution {
 
-        public ListNode ReverseList(ListNode head) {
-            ListNode previousNode = null;
-            ListNode nextNode = null;
+        public ListNode<int> ReverseList(ListNode<int> head) {
+            ListNode<int> previousNode = null;
+            ListNode<int> nextNode = null;
     
             while(head != null)
             {
@@ -21,17 +21,17 @@ namespace LeetCode_Practice
     
             return previousNode;
         }
-        private ListNode previousNode2 { get; set; } = null;
+        private ListNode<int> previousNode2 { get; set; } = null;
 
-        public ListNode ReverseList_Recursive(ListNode head)
+        public ListNode<int> ReverseList_Recursive(ListNode<int> head)
         {
             if (head is null )
             {
                 return head;
             }
 
-            ListNode previousNode = null;
-            ListNode saveNext = head.next;
+            ListNode<int> previousNode = null;
+            ListNode<int> saveNext = head.next;
 
             head.next = previousNode2;
 

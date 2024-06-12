@@ -1,10 +1,17 @@
 ﻿namespace LeetCode_Practice;
 
-public class ListNode {
-    public int val;
-    public ListNode next;
-    public ListNode(int val = 0, ListNode next = null) {
-        this.val = val; 
+public class ListNode<T> {
+    public T val;
+    public ListNode<T> next;
+    public ListNode (T val = default(T), ListNode<T> next = null) {
+        if (val == null && typeof(T) == typeof(int)) 
+        { 
+            this.val = (T)Convert.ChangeType(0, typeof(T)); 
+        }
+        else{
+            this.val = val; 
+        }
+        
         this.next = next;
     }
 }

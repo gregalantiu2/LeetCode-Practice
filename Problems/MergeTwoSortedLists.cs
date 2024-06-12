@@ -1,20 +1,9 @@
 namespace LeetCode_Practice
 {
-    /**
-     * Definition for singly-linked list.
-     * public class ListNode {
-     *     public int val;
-     *     public ListNode next;
-     *     public ListNode(int val=0, ListNode next=null) {
-     *         this.val = val;
-     *         this.next = next;
-     *     }
-     * }
-     */
     public partial class Solution {    
-        public ListNode MergeTwoLists(ListNode list1, ListNode list2) {
-            ListNode dummyHead = new ListNode();
-            ListNode dummyTail = dummyHead;
+        public ListNode<int> MergeTwoLists(ListNode<int> list1, ListNode<int> list2) {
+            ListNode<int> dummyHead = new ListNode<int>();
+            ListNode<int> dummyTail = dummyHead;
 
 
             while(list1 != null && list2 != null)
@@ -48,18 +37,18 @@ namespace LeetCode_Practice
         public void Test1()
         {
             // Arrange
-            ListNode list1 = new ListNode(1);
-            list1.next = new ListNode(3);
-            list1.next.next = new ListNode(5);
+            ListNode<int> list1 = new ListNode<int>(1);
+            list1.next = new ListNode<int>(3);
+            list1.next.next = new ListNode<int>(5);
 
-            ListNode list2 = new ListNode(2);
-            list2.next = new ListNode(4);
-            list2.next.next = new ListNode(6);
+            ListNode<int> list2 = new ListNode<int>(2);
+            list2.next = new ListNode<int>(4);
+            list2.next.next = new ListNode<int>(6);
 
             Solution solution = new Solution();
 
             // Act
-            ListNode mergedList = solution.MergeTwoLists(list1, list2);
+            ListNode<int> mergedList = solution.MergeTwoLists(list1, list2);
 
             // Assert
             Assert.Equal(1, mergedList.val);
