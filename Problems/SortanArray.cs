@@ -1,9 +1,13 @@
 namespace LeetCode_Practice
 {
-                //if it is not, do nothing
+    public partial class Solution {
+        public int[] SortArray(int[] nums) {
+            //iterate over every element
+            for(int i = 1; i < nums.Length; i++)
+            {
                 //compare each element to last
                 //if it is less than, switch and keep going
-            {
+                //if it is not, do nothing
                 int j = i;
                 while(nums[j] < nums[j -1])
                 {
@@ -23,8 +27,6 @@ namespace LeetCode_Practice
             return nums;
         }
     }
-            for(int i = 1; i < nums.Length; i++)
-            //iterate over every element
     public class SortanArray
     {
         [Fact]
