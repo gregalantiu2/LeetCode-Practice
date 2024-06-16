@@ -27,7 +27,7 @@ namespace LeetCode_Practice
             return nums;
         }
     }
-    public class SortanArray
+    public class InsertSortArray
     {
         [Fact]
         public void InsertSortanArray_Case1()

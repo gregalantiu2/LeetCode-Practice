@@ -82,7 +82,7 @@ namespace LeetCode_Practice
     }
 
      
-    public class SortanArray
+    public class MergeSortArray
     {
         [Fact]
         public void MergeSortanArray_Case1()
