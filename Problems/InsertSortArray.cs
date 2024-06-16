@@ -1,7 +1,7 @@
 namespace LeetCode_Practice
 {
     public partial class Solution {
-        public int[] SortArray(int[] nums) {
+        public int[] InsertSortArray(int[] nums) {
             //iterate over every element
             for(int i = 1; i < nums.Length; i++)
             {
@@ -30,16 +30,16 @@ namespace LeetCode_Practice
     public class SortanArray
     {
         [Fact]
-        public void SortanArray_Case1()
+        public void InsertSortanArray_Case1()
         {
             Solution solution = new Solution();
-            Assert.Equal([1,2,3,5], solution.(nums: [5,2,3,1]));
+            Assert.Equal([1,2,3,5], solution.InsertSortArray(nums: [5,2,3,1]));
         }
         [Fact]
-        public void SortanArray_Case2()
+        public void InsertSortanArray_Case2()
         {
             Solution solution = new Solution();
-            Assert.Equal([0,0,1,1,2,5], solution.(nums: [5,1,1,2,0,0]));
+            Assert.Equal([0,0,1,1,2,5], solution.InsertSortArray(nums: [5,1,1,2,0,0]));
         }
     }
 }
