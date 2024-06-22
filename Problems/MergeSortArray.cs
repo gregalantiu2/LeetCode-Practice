@@ -96,5 +96,11 @@ namespace LeetCode_Practice
             Solution solution = new Solution();
             Assert.Equal([0,0,1,1,2,5], solution.MergeSortArray(nums: [5,1,1,2,0,0]));
         }
+        [Fact]
+        public void MergeSortanArray_Case3()
+        {
+            Solution solution = new Solution();
+            Assert.Equal([-5,-2,3], solution.MergeSortArray(nums: [-2,3,-5]));
+        }
     }
 }
