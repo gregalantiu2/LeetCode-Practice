@@ -13,12 +13,33 @@ namespace LeetCode_Practice
                 return arr;
             }
 
-            //Pick pivot
+            //Pick pivot and instantiate pointers
             int p = arr[e];
+            int left = s;
 
+            //Run loop to sort
+            for(int i = s; i < e; i++)
+            {
+                if(arr[i] < p)
+                {
+                    var temp = arr[i];
+                    arr[i] = arr[left];
+                    arr[left] = temp;
+                    left++;
+                }
+            }
 
-            // Placeholder
-            return new int[] { };
+            //Swap pivot w/ pointer
+            arr[e] = arr[left];
+            arr[left] = p;
+
+            //Quick Sort left
+            QuickSorting(arr, s, left - 1);
+
+            //Quick Sort right
+            QuickSorting(arr, left + 1, e);
+            
+            return arr;
         }
     }
 
