@@ -2,6 +2,22 @@ namespace LeetCode_Practice
 {
     public partial class Solution {
         public int[] QuickSortArray(int[] nums) {
+            return QuickSorting(nums, 0, nums.Length - 1);
+        }
+
+        public int[] QuickSorting(int[] arr, int s, int e)
+        {
+            //Base case: if there is only one element in the array
+            if(e - s + 1 <= 1)
+            {
+                return arr;
+            }
+
+            //Pick pivot
+            int p = arr[e];
+
+
+            // Placeholder
             return new int[] { };
         }
     }
