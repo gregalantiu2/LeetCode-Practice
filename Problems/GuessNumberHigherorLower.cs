@@ -1,3 +1,4 @@
+
 namespace LeetCode_Practice
 {
     public partial class Solution {
@@ -27,14 +28,19 @@ namespace LeetCode_Practice
 
             return -1;
         }
+
+        private int guess(int mid)
+        {
+            throw new NotImplementedException();
+        }
+
     }
     public class GuessNumberHigherorLower
     {
         [Fact]
         public void GuessNumberHigherorLower_Case1()
         {
-            Solution solution = new Solution();
-            Assert.Equal(X,solution.Test(x));
+            
         }
     }
 }
