@@ -3,13 +3,28 @@ namespace LeetCode_Practice
     public partial class Solution {
 
         public int GuessNumber(int n) {
-    
-            for (int i = 1; i <= n; i++)
+            int mid;
+            int left = 1;
+            int right = n;
+
+            while(left <= right)
             {
-                if(guess(i) == 0)
-                    return i;
+                mid = left + (right - left) / 2;
+
+                if (guess(mid) == -1)
+                {
+                    right = mid - 1;
+                }
+                else if (guess(mid) == 1)
+                {
+                    left = mid + 1;
+                }
+                else
+                {
+                    return mid;
+                }
             }
-    
+
             return -1;
         }
     }
