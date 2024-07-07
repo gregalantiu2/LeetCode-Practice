@@ -2,26 +2,28 @@ namespace LeetCode_Practice
 {
     public partial class Solution {
         public bool ContainsDuplicate(int[] nums) {
-            bool containsDupe = false;
-    
-            for (int i = 0; i < nums.Length; i++)
+            Dictionary<int, int> dict = new Dictionary<int, int>();
+
+            foreach (var num in nums)
             {
-                for (int n = i + 1; n < nums.Length; n++)
+                if (dict.ContainsKey(num))
                 {
-                    if (nums[i] == nums[n])
-                        containsDupe = true;
+                    return true;
                 }
+                
+                dict.Add(num, 1);
             }
-            return containsDupe;
+
+            return false;   
         }
     }
-    public class ContainsDuplicate
+    public class ContainsDuplicateTest
     {
         [Fact]
         public void ContainsDuplicate_Case1()
         {
-            Solution solution = new Solution();
-            Assert.Equal(X,solution.Test(x));
+            // Solution solution = new Solution();
+            // Assert.Equal(X,solution.Test(x));
         }
     }
 }
