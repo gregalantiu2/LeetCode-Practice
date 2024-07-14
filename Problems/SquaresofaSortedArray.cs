@@ -21,6 +21,34 @@ namespace LeetCode_Practice
     
             return nums;
         }
+
+        public int[] SortedSquares2(int[] nums) {
+            int left = 0;
+            int right = nums.Length - 1;
+            int index = nums.Length - 1;
+
+            int[] result = new int[nums.Length];
+
+            while (left <= right)
+            {
+                int leftSquare = nums[left] * nums[left];
+                int rightSquare = nums[right] * nums[right];
+
+                if (leftSquare > rightSquare)
+                {
+                    result[index] = leftSquare; 
+                    left++;
+                }
+                else{
+                    result[index] = rightSquare; 
+                    right--;
+                }
+
+                index--;
+            }
+
+            return result;
+        }
     }
     public class SquaresofaSortedArray
     {
@@ -28,7 +56,7 @@ namespace LeetCode_Practice
         public void SquaresofaSortedArray_Case1()
         {
             Solution solution = new Solution();
-            Assert.Equal([0,1,9,16,100], solution.SortedSquares(nums: [-4,-1,0,3,10]));
+            Assert.Equal([0,1,9,16,100], solution.SortedSquares2(nums: [-4,-1,0,3,10]));
         }
     }
 }
