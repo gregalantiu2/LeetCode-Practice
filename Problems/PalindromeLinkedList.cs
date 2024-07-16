@@ -1,11 +1,11 @@
 namespace LeetCode_Practice
 {
     public partial class Solution {
-        public bool IsPalindrome(ListNode head) {
+        public bool IsPalindrome(ListNode<int> head) {
             Stack<int> set1 = new Stack<int>();
             Queue<int> set2 = new Queue<int>();
      
-            ListNode node = head;
+            ListNode<int> node = head;
     
             while (head != null)
             {
