@@ -1,20 +1,20 @@
 namespace LeetCode_Practice
 {
     public partial class Solution {
-        private List<int> result = new List<int>();
+        private List<int> resultList = new List<int>();
     
         public IList<int> InorderTraversal(TreeNode<int> root) {
     
             if (root == null)
             {
-                return result;
+                return resultList;
             }
     
             InorderTraversal(root.left);
-            result.Add(root.val);
+            resultList.Add(root.val);
             InorderTraversal(root.right);
     
-            return result;
+            return resultList;
         }
     }
     public class BinaryTreeInorderTraversal
