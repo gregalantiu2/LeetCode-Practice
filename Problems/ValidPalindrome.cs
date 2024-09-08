@@ -5,7 +5,7 @@ namespace LeetCode_Practice
             var trimmed = new String(s.Where(Char.IsLetterOrDigit).ToArray()).ToLower();
             int l = 0;
             int r = trimmed.Length - 1;
-    
+            
             while(l < r)
             {
                 if (trimmed[l] == trimmed[r])
