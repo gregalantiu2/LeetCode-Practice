@@ -2,56 +2,33 @@ namespace LeetCode_Practice
 {
     public partial class Solution {
         public bool IsSubsequence(string s, string t) {
-            if (s.Length == 0)
+            int i = 0;
+            int j = 0;
+
+            if (s.Length < 1)
             {
                 return true;
             }
-    
-            if (t.Length == 0)
+
+            if (t.Length < 1)
             {
                 return false;
             }
-    
-            int t_Left = 0;
-            int t_Right = t.Length - 1;
-            int s_Left = 0;
-            int s_Right = s.Length - 1;
-            int counter = s.Length;
-            
-    
-            while (t_Left < t_Right)
+
+            while (j < t.Length)
             {
-                if (s[s_Left] == t[t_Left])
+                if (s[i] == t[j])
                 {
-                    s_Left++;
-                    counter--;
-                }
-    
-                if (s[s_Right] == t[t_Right])
-                {
-                    s_Right--;
-                    counter--;
-                }
-    
-                if (s_Right < 0 || s_Left > s.Length - 1)
-                {
-                    return true;
-                }
-    
-                t_Left++;
-                t_Right--;
-    
-                if (t_Left == t_Right)
-                {
-                    if (s[s_Right] == t[t_Right])
+                    i++;
+                    if (i == s.Length)
                     {
-                        s_Right--;
-                        counter--;
+                        return true;
                     }
                 }
+                j++;
             }
-    
-            return counter <= 0;
+
+            return false;
         }
     }
     public class IsSubsequence
