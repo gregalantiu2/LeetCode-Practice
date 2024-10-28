@@ -37,6 +37,22 @@ namespace LeetCode_Practice
     
             return -1;
         }
+        public int PivotIndex2(int[] nums) {
+            int rightTotal = nums.Sum();
+            int leftTotal = 0;
+
+            for (int i = 0; i < nums.Length; i++)
+            {
+                rightTotal -= nums[i];
+                if (leftTotal == rightTotal)
+                {
+                    return i;
+                }
+                leftTotal += nums[i];
+            }
+
+            return -1;
+        }
     }
     public class FindPivotIndex
     {
